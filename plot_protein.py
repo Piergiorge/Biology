@@ -1,6 +1,9 @@
 import requests
 from Bio import SeqIO
 import matplotlib.pyplot as plt
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from Bio.SeqFeature import SeqFeature, FeatureLocation
 
 # Define the protein sequence
 sequence = "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH"
@@ -15,12 +18,9 @@ for record in SeqIO.parse(io.StringIO(response.text), "interpro"):
         domains.append((domain.location.start, domain.location.end, domain.type))
 
 # Create a Biopython object representing the protein
-from Bio.Seq import Seq
-from Bio.SeqRecord import SeqRecord
 protein = SeqRecord(Seq(sequence), id="Protein", description="Example protein")
 
 # Add the domain information to the Biopython object
-from Bio.SeqFeature import SeqFeature, FeatureLocation
 for start, end, type in domains:
     feature = SeqFeature(FeatureLocation(start, end), type=type)
     protein.features.append(feature)
