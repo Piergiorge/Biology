@@ -14,4 +14,4 @@ for _, row in df.iterrows():
                   popup=row['site_name']).add_to(map)
 
 # Save the map to an HTML file
-map.save('sampling_sites.html')
+map.save('./sampling_sites.html')
