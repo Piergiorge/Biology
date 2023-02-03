@@ -1,8 +1,16 @@
-import pandas as pd
+import pysam
 
-# Read the VCF file into a DataFrame
-df = pd.read_csv('data.vcf', sep='\t', comment='#', header=None, names=['chrom', 'pos', 'ID', 'ref', 'alt', 'qual', 'filter', 'info', 'format', 'sample'])
+filename = "path/to/your/vcf/file.vcf"
 
-# Count the number of rows
-num_variants = len(df)
-print(num_variants)
+# Open the VCF file using pysam
+vcf = pysam.VariantFile(filename)
+
+# Initialize a counter for the number of variants
+num_variants = 0
+
+# Read the file line by line
+for variant in vcf:
+    num_variants += 1
+
+# Print the number of variants
+print("Number of variants:", num_variants)
