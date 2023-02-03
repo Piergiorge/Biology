@@ -1,14 +1,19 @@
-import vcf
+import pysam
 
-"identify the genotype in a VCF file"
+vcf_file = "path/to/your/vcf_file.vcf"
 
 # Open the VCF file
-vcf_reader = vcf.Reader(open('/path/to/file.vcf', 'r'))
+vcf = pysam.VariantFile(vcf_file)
 
-# Iterate over the variants in the VCF file
-for record in vcf_reader:
-    # Get the genotype of the individual with ID "Sample1"
-    sample1_genotype = record.genotype("Sample1")
+# Get the header information
+header = vcf.header
 
-    # Print the genotype
-    print("Sample1 genotype:", sample1_genotype["GT"])
+# Get the sample names from the header
+samples = header.samples
+
+# Loop through the variants in the VCF file
+for variant in vcf:
+    # Get the genotype information for each sample
+    for sample in samples:
+        genotype = variant.samples[sample]["GT"]
+        print(f"Sample: {sample}, Genotype: {genotype}")
