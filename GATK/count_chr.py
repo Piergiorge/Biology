@@ -1,8 +1,12 @@
-import pandas as pd
+import pysam
 
-# Read the VCF file into a DataFrame
-df = pd.read_csv('data.vcf', sep='\t', comment='#', header=None, names=['chrom', 'pos', 'ID', 'ref', 'alt', 'qual', 'filter', 'info', 'format', 'sample'])
+def count_chromosomes(vcf_file):
+    with pysam.VariantFile(vcf_file) as vcf:
+        chromosomes = set()
+        for record in vcf:
+            chromosomes.add(record.chrom)
+        return len(chromosomes)
 
-# Count the number of unique chromosomes
-num_chromosomes = len(df['chrom'].unique())
-print(num_chromosomes)
+vcf_file = "path/to/your/vcf_file.vcf"
+chromosome_count = count_chromosomes(vcf_file)
+print("Number of chromosomes:", chromosome_count)
