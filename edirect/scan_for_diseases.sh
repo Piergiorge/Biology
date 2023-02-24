@@ -1,4 +1,6 @@
 #!/bin/bash
+# ex: ./scan_for_diseases.sh -m 1950 -M 1990 diphtheria pertussis tetanus
+
 OPTIND=1
 mindate=1900
 maxdate=2020
