@@ -81,19 +81,14 @@ def main():
                     
           for item in gda_data:
             if isinstance(item, dict):
-              print(item.get('geneid'),
-                    item.get('gene_symbol'),
-                    item.get('gene_dsi'),
-                    item.get('gene_dpi'),
-                    item.get('gene_pli'),                    
-                    item.get('disease_name'),
-                    item.get('disease_class_name'),
-                    item.get('score')
-                  )
+                gene_symbol = item.get('gene_symbol')
+                disease_name = item.get('disease_name')
+                score = item.get('score')
+                writer.writerow([gene_symbol, disease_name, score])
 
             else:
-              row = f"No info for gene {gene_symbol}"
-              writer.writerow(row)
+                row = f"No info for gene {gene_symbol}"
+                writer.writerow([row])
 
 if __name__ == "__main__":
     main()
