@@ -1,5 +1,5 @@
 # Summary
-This code reads in a miRNA expression table, filters out miRNAs with low expression, and outputs a list of retained miRNAs.
+This code reads in a miRNA expression table (counts), filters out miRNAs with low expression, and outputs a list of retained miRNAs.
 
 # Input
 miRNA_table.csv: a miRNA expression table in CSV format with column headers and row names.
