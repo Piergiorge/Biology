@@ -18,3 +18,6 @@ for _, row in df.iterrows():
 # Save the map to an HTML file:
 map.save('./sampling_sites.html')
 ```
+# 
+## Plotting Geographical Data using Plotly
+This code reads a CSV file containing geographical data (latitude and longitude) for different sampling sites, creates a scattergeo trace and plots the locations on an interactive world map using Plotly. The color, size, and shape of the markers can be customized, and the map can be zoomed in or out and panned to view different regions. Hovering over a marker displays a popup with information about the site. The resulting figure can be exported as an HTML file or as a static image.
