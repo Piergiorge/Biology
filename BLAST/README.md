@@ -49,7 +49,7 @@ This script performs a BLAST search using the Bio.Blast module from Biopython. H
 from Bio.Blast import NCBIWWW
 from Bio.Blast import NCBIXML
 ```
-These lines import the NCBIWWW and NCBIXML modules from Bio.Blast, which allow us to perform a BLAST search and parse the results, respectively.
+These lines import the `NCBIWWW` and `NCBIXML` modules from `Bio.Blast`, which allow us to perform a BLAST search and parse the results, respectively.
 
 ```python
 query = "AGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGC"
@@ -59,12 +59,12 @@ This line sets the query sequence as a string.
 ```python
 result_handle = NCBIWWW.qblast("blastn", "nr", query)
 ```
-This line performs a BLAST search using the blastn algorithm and the nr database, with the query sequence specified above. The results are returned as a StringIO object, which we can parse using the NCBIXML module.
+This line performs a BLAST search using the blastn algorithm and the nr database, with the query sequence specified above. The results are returned as a `StringIO` object, which we can parse using the NCBIXML module.
 
 ```python
 blast_records = NCBIXML.parse(result_handle)
 ```
-This line parses the StringIO object returned by the qblast() function into a BlastRecords object, which can be iterated over to extract information about each hit.
+This line parses the `StringIO` object returned by the `qblast()` function into a `BlastRecords` object, which can be iterated over to extract information about each hit.
 
 ```python
 for blast_record in blast_records:
