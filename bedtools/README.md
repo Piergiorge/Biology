@@ -13,3 +13,10 @@ Use `bedtools getfasta` to extract the sequences corresponding to the intervals 
 * output.fasta: A fasta file containing the sequences corresponding to the intervals specified in the intervals.bed file.
 
 * - Note: `bedtools` must be installed and available in the command line path to use this code.
+
+# Example
+```bash
+# index generation:
+samtools faidx reference_genome.fasta
+bedtools getfasta -fi reference_genome.fasta -bed intervals.bed -fo output.fasta
+```
