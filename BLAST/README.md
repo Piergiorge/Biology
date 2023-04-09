@@ -33,10 +33,10 @@ This code is written in Python using the `pandas` library to process BLAST resul
 
 First, the code imports the pandas library and reads the BLAST results file (`'blast_results.txt'`) into a DataFrame using the `read_csv()` function.
 
-Next, the code groups the rows in the DataFrame by query and subject IDs using the `groupby()` function and assigns the result to the variable grouped.
+Next, the code groups the rows in the DataFrame by query and subject IDs using the `groupby()` function and assigns the result to the variable `grouped`.
 
 Then, the code defines a function called `select_best_hit()` that takes a group (subset of the DataFrame) and returns the row with the smallest e-value using the `nsmallest()` function.
 
-The `apply()` function is used to apply the `select_best_hit()` function to each group in grouped. The results are then concatenated using the `concat()` function and assigned to the variable best_hits.
+The `apply()` function is used to apply the `select_best_hit()` function to each group in grouped. The results are then concatenated using the `concat()` function and assigned to the variable `best_hits`.
 
 Finally, `the to_csv()` function is used to save the best hits to a new tab-separated file called '`best_hits.txt`', without including the index column.
