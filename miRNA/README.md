@@ -7,7 +7,7 @@ This code reads in a miRNA expression table (counts), filters out miRNAs with lo
 * miRNA_expr_filt.txt: a list of miRNAs retained after filtering.
  
 ## Code breakdown:
-`
+
 1 - `miRNA_table <- read.table("miRNA_table.csv", header = TRUE, sep = "\t", check.names = FALSE)`: This reads in the miRNA expression table from a CSV file called "miRNA_table.csv" with a header and tab-separated values. The `check.names = FALSE` argument prevents R from modifying the column names.
 
 2 - `miRNA_cols <- grep("^hsa-.", colnames(miRNA_table))`: This identifies the columns of the miRNA expression table that contain miRNA expression data by searching for column names that start with "hsa-".
