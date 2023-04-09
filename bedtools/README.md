@@ -14,7 +14,7 @@ Use `bedtools getfasta` to extract the sequences corresponding to the intervals 
 
 * - Note: `bedtools` must be installed and available in the command line path to use this code.
 
-# Example
+## Example
 ```bash
 # index generation:
 samtools faidx reference_genome.fasta
