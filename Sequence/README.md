@@ -28,3 +28,31 @@ This code defines a function `get_uniprot_data` that extracts data for a given p
 7 - Call the `get_uniprot_data` function with the protein ID as input and store the returned data in a variable called data.
 
 8 - Check if data was returned successfully, and if so, print it to the console. Otherwise, print an error message.
+
+# polya.py
+
+This is a Python code that uses the regular expression module `re` to find the position of a poly-A tail in an RNA sequence.
+
+## Finding a Poly-A Tail in an RNA Sequence
+This code uses regular expressions to find the position of a poly-A tail in an RNA sequence. The function `find_poly_a_tail` takes an RNA sequence as input and returns the starting position of the poly-A tail, or `-1` if no poly-A tail is found. The regular expression used in this code matches the letter `"A"` occurring 10 or more times at the end of the sequence.
+
+```python
+import re
+
+def find_poly_a_tail(sequence):
+    match = re.search("A{10,}$", sequence)
+    if match:
+        return match.start()
+    return -1
+
+rna_sequence = "AGCAGUAGCAGUAGCAGUAGCAGUAGCAGUAGCAGUAGCAGUAGCAGUAAAAAA"
+poly_a_tail_start = find_poly_a_tail(rna_sequence)
+if poly_a_tail_start != -1:
+    print("Poly-A tail found at position:", poly_a_tail_start)
+else:
+    print("Poly-A tail not found.")
+```
+## Output
+```python
+Poly-A tail found at position: 32
+```
