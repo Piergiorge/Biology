@@ -20,3 +20,8 @@ Use `bedtools getfasta` to extract the sequences corresponding to the intervals 
 samtools faidx reference_genome.fasta
 bedtools getfasta -fi reference_genome.fasta -bed intervals.bed -fo output.fasta
 ```
+# intersect.sh
+
+This command will use the `bedtools intersect` tool to find the overlapping regions between two BED files (`file1.bed` and `file2.bed`) and output the intersecting regions in a new BED file intersections.bed. The `-wa` and `-wb` options are used to include both the original regions in file1.bed and file2.bed in the output file.
+
+Note that the intersection is defined as the overlapping regions on the same chromosome(s). If the two files are from different genomes, or if the chromosomes in the files have different naming conventions, you may need to preprocess the files to ensure that the chromosomes are named consistently before running the bedtools intersect command.
