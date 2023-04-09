@@ -51,7 +51,7 @@ Years    Dise1    Dise2    Dise3
 ```
 ## Output
 
-```bash
+```yaml
 Scanning for the following diseases: diphtheria pertussis tetanus
 Using a date range of 1950 to 1990
 Years   Diph    Pert    Teta
