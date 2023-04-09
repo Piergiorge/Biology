@@ -12,3 +12,6 @@ def select_best_hit(group):
 
 # Apply the function to each group and concatenate the results
 best_hits = pd.concat(grouped.apply(select_best_hit))
+
+# Save the best hits to a new file
+best_hits.to_csv('best_hits.txt', sep='\t', index=False)
