@@ -25,7 +25,7 @@ The script then uses NCBI E-utilities to retrieve gene information. It first use
 ## Bash script to scan for occurrences of specified diseases in PubMed articles within a given date range
 This script takes disease names as arguments and scans PubMed articles for occurrences of each disease within a specified date range. It uses the `NCBI E-Utilities` to perform the searches and retrieve the counts.
 
-```bash
+```yaml
 ./scan_for_diseases.sh [-m mindate] [-M maxdate] disease1 disease2 ...
 ```
 ## Arguments
@@ -46,7 +46,7 @@ Years    Dise1    Dise2    Dise3
 ```
 
 ## Example
-```bash
+```yaml
 ./scan_for_diseases.sh -m 1950 -M 1990 diphtheria pertussis tetanus
 ```
 ## Output
