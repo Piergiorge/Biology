@@ -53,6 +53,6 @@ else:
     print("Poly-A tail not found.")
 ```
 ## Output
-```python
+```bash
 Poly-A tail found at position: 32
 ```
