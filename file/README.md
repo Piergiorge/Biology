@@ -50,3 +50,30 @@ It prompts the user to enter the current file format and the new file format, an
 * The script only changes the file format of files in the current working directory, not in any subdirectories.
 * The script uses the os module to change the file format of the files. If there are any permission issues, the script may not be able to change the format of some files.
 * The script will print a list of the files in the directory before and after the file format change.
+
+# tsv2xlsx.py
+
+This Python script reads a TSV file into a Pandas DataFrame, and then writes the DataFrame to an Excel file.
+
+## Convert TSV file to Excel file using Pandas
+
+This Python script reads a TSV file into a Pandas DataFrame, and then writes the DataFrame to an Excel file.
+
+## Usage
+
+1. Put the `tsv_to_excel.py` script in the same directory as your TSV file.
+2. Open a terminal window and navigate to the directory where your TSV file and `tsv_to_excel.py` script are located.
+3. Run the following command:
+
+```python
+python tsv_to_excel.py
+```
+
+4. The script will read the `data.tsv` file and create a new Excel file named `data.xlsx` in the same directory.
+
+
+## Notes
+
+- The TSV file must be formatted with tab-separated values.
+- The Excel file will not include the index column of the DataFrame.
+- The script assumes that the TSV file and script are located in the same directory. If they are not, you will need to modify the file paths in the script accordingly.
