@@ -19,3 +19,46 @@ The script then uses NCBI E-utilities to retrieve gene information. It first use
 ```bash
 ./retrieve_genes.sh -o "Homo sapiens" -c 11
 ```
+
+# scan_for_diseases.sh
+
+## Bash script to scan for occurrences of specified diseases in PubMed articles within a given date range
+This script takes disease names as arguments and scans PubMed articles for occurrences of each disease within a specified date range. It uses the `NCBI E-Utilities` to perform the searches and retrieve the counts.
+
+```bash
+./scan_for_diseases.sh [-m mindate] [-M maxdate] disease1 disease2 ...
+```
+## Arguments
+* `-m` mindate: The earliest year to include in the search. Default is 1900.
+* `-M` maxdate: The latest year to include in the search. Default is 2020.
+* `disease1 disease2 ...`: Names of the diseases to search for. Disease names should be in lowercase.
+
+## Output
+The script outputs a table showing the number of articles found for each disease in each decade within the specified date range.
+
+The table has the following format:
+```markdown
+Years    Dise1    Dise2    Dise3
+-------------------------------
+2020s      123      456      789
+2010s      234      567      890
+...
+```
+
+## Example
+```bash
+./scan_for_diseases.sh -m 1950 -M 1990 diphtheria pertussis tetanus
+```
+## Output
+
+```bash
+Scanning for the following diseases: diphtheria pertussis tetanus
+Using a date range of 1950 to 1990
+Years   Diph    Pert    Teta
+---------------------------
+1990s       3      35      42
+1980s      26     184     150
+1970s      46     469     315
+1960s     165    1025     620
+1950s     509    2769    1488
+```
