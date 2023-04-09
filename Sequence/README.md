@@ -56,3 +56,10 @@ else:
 ```bash
 Poly-A tail found at position: 32
 ```
+
+# signalp.py
+The code snippet implements a regular expression-based approach to finding the start position of a signal peptide in a protein sequence. 
+
+The `find_signal_peptide` function takes a protein sequence as input and searches for the first methionine (`M`) that is not the first character of the sequence. It returns the position (0-indexed) of that methionine if found, or `-1` otherwise.
+
+The code then applies this function to the example protein sequence `MDSDPGGRRRQQQQQQQQQQQQQQQQQQQQ` and prints the start position of the signal peptide if found, or a message indicating that no signal peptide was found.
