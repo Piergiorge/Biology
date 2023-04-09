@@ -5,7 +5,7 @@ This code reads in a miRNA expression table (counts), filters out miRNAs with lo
 * miRNA_table.csv: a miRNA expression table in CSV format with column headers and row names.
 ## Output
 * miRNA_expr_filt.txt: a list of miRNAs retained after filtering.
-
+ 
 ## Code breakdown:
 `
 1 - `miRNA_table <- read.table("miRNA_table.csv", header = TRUE, sep = "\t", check.names = FALSE)`: This reads in the miRNA expression table from a CSV file called "miRNA_table.csv" with a header and tab-separated values. The `check.names = FALSE` argument prevents R from modifying the column names.
