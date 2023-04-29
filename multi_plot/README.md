@@ -56,7 +56,12 @@ p5 <- ggplot(mtcars, aes(x = factor(vs), y = wt, fill = factor(am))) +
 3. Arrange the 5 plots in a 3x2 grid using `ggarrange()`:
 
 ```r
-ggarrange(p1, p2, p3, p4, p5, nrow = 3, ncol = 2)
+grid.arrange(
+  arrangeGrob(p1, p2, ncol = 2),
+  arrangeGrob(p3, p4, ncol = 2),
+  arrangeGrob(p5, ncol = 2),
+  nrow = 3
+)
 ```
 
 # Output
