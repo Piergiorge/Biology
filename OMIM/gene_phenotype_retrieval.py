@@ -11,7 +11,7 @@ output_file = open('result.tsv', 'w')
 output_file.write("Gene\tneurologicCentralNervousSystem_clinicalSynopsis\tphenotype\tpheno_id\n")
 
 # Open gene list file
-with open('57_list.txt', 'r') as file:
+with open('gene_list.txt', 'r') as file:
     for line in file.readlines():
         search_terms = line.strip()
 
