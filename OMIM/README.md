@@ -41,6 +41,6 @@ The output file `result.tsv` will contain the following columns:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
 
 You can use this README.md file as a starting point and customize it further based on your requirements. Make sure to update the sections with relevant information specific to your project.
